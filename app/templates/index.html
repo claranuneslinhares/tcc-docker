@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Produtos</title>
+</head>
+<body>
+  <h1>Cadastro de Produtos</h1>
+  <form method="POST" action="/adicionar">
+    <input name="nome" placeholder="Nome do produto" required>
+    <input name="preco" placeholder="Preço" required>
+    <button type="submit">Adicionar</button>
+  </form>
+
+  <h2>Produtos cadastrados:</h2>
+  <ul>
+    {% for p in produtos %}
+      <li>{{ p[1] }} - R$ {{ p[2] }} <a href="/deletar/{{ p[0] }}">[Excluir]</a></li>
+    {% endfor %}
+  </ul>
+</body>
+</html>
